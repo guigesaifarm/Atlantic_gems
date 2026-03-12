@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmalina Paraíba Azul Gota 1,62ct | Sertão Atlantic Gems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c9a962;
+            --accent: #00b4d8;
+            --ocean-blue: #003d5c;
+            --deep-blue: #002a3f;
+            --bg: #fafafa;
+            --text: #333;
+            --light-gray: #f5f5f5;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--deep-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,61,92,0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 0 20px rgba(201,169,98,0.4);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+        }
+
+        /* Main Product Section */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+            box-shadow: 0 15px 50px rgba(0,61,92,0.15);
+            border: 1px solid var(--border);
+        }
+
+        .main-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,61,92,0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .main-image:hover .zoom-hint {
+            opacity: 1;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb.active {
+            border-color: var(--ocean-blue);
+            box-shadow: 0 0 10px rgba(0,61,92,0.3);
+        }
+
+        .thumb:hover {
+            border-color: var(--secondary);
+        }
+
+        /* Product Info */
+        .product-info h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .sku {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-new {
+            background: #8b4513;
+            color: white;
+        }
+
+        .badge-stock {
+            background: var(--ocean-blue);
+            color: white;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--ocean-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .installments {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .discount {
+            color: #2e7d32;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .payment-options {
+            margin-top: 1.5rem;
+        }
+
+        .payment-toggle {
+            background: none;
+            border: none;
+            color: var(--ocean-blue);
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .installment-list {
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .installment-list.show {
+            display: grid;
+        }
+
+        .installment-item {
+            padding: 0.3rem;
+            color: #555;
+        }
+
+        .installment-item.highlight {
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--deep-blue) 100%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,61,92,0.3);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,61,92,0.4);
+        }
+
+        /* Specs Table */
+        .specs-section {
+            margin-bottom: 2rem;
+        }
+
+        .specs-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .specs-table td {
+            padding: 0.8rem 0;
+        }
+
+        .specs-table td:first-child {
+            color: #666;
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Description */
+        .description {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .description h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 300;
+        }
+
+        .description-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-left: 4px solid var(--ocean-blue);
+            font-style: italic;
+            color: #555;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Origin Section */
+        .origin-section {
+            margin: 3rem 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .origin-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--ocean-blue);
+            font-size: 1.3rem;
+        }
+
+        .origin-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .origin-text {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Purity Scale */
+        .purity-scale {
+            margin-top: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .purity-scale h3 {
+            margin-bottom: 1.5rem;
+            color: var(--ocean-blue);
+            font-size: 1.3rem;
+        }
+
+        .purity-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .purity-item:last-child {
+            border-bottom: none;
+        }
+
+        .purity-code {
+            display: inline-block;
+            background: var(--ocean-blue);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .purity-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Related Products */
+        .related-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            color: var(--ocean-blue);
+            font-weight: 300;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,61,92,0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-badges {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .card-badge {
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .card-info {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .card-price {
+            font-size: 1.2rem;
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--deep-blue) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 0 30px rgba(201,169,98,0.3);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-subtitle {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .footer-divider {
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            margin: 1.5rem auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .main-image {
+                height: 350px;
+            }
+
+            .logo-title {
+                font-size: 1.1rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.65rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .installment-list {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbnails {
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-container {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="/mnt/kimi/upload/sertao atlantic gems d.jpg" alt="Sertão Atlantic Gems" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Sertão Atlantic Gems</span>
+                    <span class="logo-subtitle">Turmalina Paraíba</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#turmalinas">Turmalinas</a></li>
+                    <li><a href="#preciosas">Pedras Preciosas</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="#">Home</a> / <a href="#">Turmalinas</a> / <a href="#">Paraíba Azul</a> / Turmalina Paraíba Azul Gota 1,62ct
+    </div>
+
+    <div class="product-container">
+        <div class="gallery">
+            <div class="main-image" onclick="openLightbox()">
+                <img src="/mnt/kimi/upload/turmalinaf.jpg" alt="Turmalina Paraíba Azul Gota 1,62ct" id="mainImage">
+                <div class="zoom-hint">Clique para ampliar</div>
+            </div>
+            <div class="thumbnails">
+                <div class="thumb active" onclick="changeImage('/mnt/kimi/upload/turmalinaf.jpg', this)">
+                    <img src="/mnt/kimi/upload/turmalinaf.jpg" alt="Turmalina 1">
+                </div>
+                <div class="thumb" onclick="changeImage('/mnt/kimi/upload/turmalinaa.jpg', this)">
+                    <img src="/mnt/kimi/upload/turmalinaa.jpg" alt="Turmalina 2">
+                </div>
+                <div class="thumb" onclick="changeImage('/mnt/kimi/upload/turmalinab.jpg', this)">
+                    <img src="/mnt/kimi/upload/turmalinab.jpg" alt="Turmalina 3">
+                </div>
+                <div class="thumb" onclick="changeImage('/mnt/kimi/upload/turmalinac.jpg', this)">
+                    <img src="/mnt/kimi/upload/turmalinac.jpg" alt="Turmalina 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>Turmalina Paraíba Azul Gota 1,62ct</h1>
+            <div class="sku">Modelo: SPG-PAR-AZL-1,62-10,69x5,86</div>
+            
+            <div class="badges">
+                <span class="badge badge-new">Novidade</span>
+                <span class="badge badge-stock">New Stock</span>
+            </div>
+
+            <div class="price-section">
+                <div class="price">R$ 12.938,41</div>
+                <div class="installments">ou 10x de <strong>R$ 1.293,84</strong> sem juros</div>
+                <div class="discount">5% de desconto à vista no cartão ou boleto</div>
+                
+                <div class="payment-options">
+                    <button class="payment-toggle" onclick="toggleInstallments()">Ver opções de parcelamento ↓</button>
+                    <div class="installment-list" id="installmentList">
+                        <div class="installment-item highlight">à vista R$ 12.938,41</div>
+                        <div class="installment-item highlight">2x de R$ 6.469,20 sem juros</div>
+                        <div class="installment-item highlight">3x de R$ 4.312,80 sem juros</div>
+                        <div class="installment-item">4x de R$ 3.234,60 sem juros</div>
+                        <div class="installment-item">5x de R$ 2.587,68 sem juros</div>
+                        <div class="installment-item">6x de R$ 2.156,40 sem juros</div>
+                        <div class="installment-item">7x de R$ 1.848,34 sem juros</div>
+                        <div class="installment-item">8x de R$ 1.617,30 sem juros</div>
+                        <div class="installment-item">9x de R$ 1.437,60 sem juros</div>
+                        <div class="installment-item highlight">10x de R$ 1.293,84 sem juros</div>
+                        <div class="installment-item">12x de R$ 1.199,46 com juros</div>
+                        <div class="installment-item">15x de R$ 987,19 com juros</div>
+                        <div class="installment-item">18x de R$ 846,09 com juros</div>
+                        <div class="installment-item">24x de R$ 670,65 com juros</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button">Comprar Agora</button>
+
+            <div class="specs-section">
+                <h3 class="specs-title">Especificações Técnicas</h3>
+                <table class="specs-table">
+                    <tr>
+                        <td>Variedade</td>
+                        <td>Turmalina Paraíba</td>
+                    </tr>
+                    <tr>
+                        <td>Espécie Mineral</td>
+                        <td>Elbaíta</td>
+                    </tr>
+                    <tr>
+                        <td>Peso Total</td>
+                        <td>1,62 ct</td>
+                    </tr>
+                    <tr>
+                        <td>Medidas</td>
+                        <td>10,69 x 5,86 x 4,40 mm</td>
+                    </tr>
+                    <tr>
+                        <td>Forma</td>
+                        <td>Gota</td>
+                    </tr>
+                    <tr>
+                        <td>Cor Predominante</td>
+                        <td>Azul Neon</td>
+                    </tr>
+                    <tr>
+                        <td>Pureza</td>
+                        <td>IL</td>
+                    </tr>
+                    <tr>
+                        <td>Origem</td>
+                        <td>Moçambique</td>
+                    </tr>
+                    <tr>
+                        <td>Tratamento</td>
+                        <td>Heat (Aquecimento)</td>
+                    </tr>
+                    <tr>
+                        <td>Dureza</td>
+                        <td>7,5 Mohs</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade</td>
+                        <td>1 unidade</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container" style="margin-top: -2rem;">
+        <div class="description" style="grid-column: 1 / -1;">
+            <h2>Sobre a Turmalina Paraíba</h2>
+            <div class="description-text">
+                <p>A mais valorizada e rara entre as turmalinas, a Turmalina Paraíba foi descoberta em 1981, no estado da Paraíba, pelo garimpeiro Heitor Dimas Barbosa. A gema possuía uma beleza tão fascinante e única que os comerciantes inicialmente recusaram comprá-la por temer que fosse sintética.</p>
+                
+                <p>Heitor Dimas enviou então o material para análise no Gemological Institute of America (GIA), nos Estados Unidos. Após rigorosos testes, foi certificado que se tratava realmente de uma turmalina natural, com composição única baseada em cobre, manganês e ferro - elementos responsáveis pela cor elétrica característica.</p>
+                
+                <p>Sua cor neon vibrante é o que faz seu diferencial absoluto. Mesmo em ambientes de pouca luminosidade, seu brilho intenso não cessa. As tonalidades mais cobiçadas são os azuis elétricos e verdes esmeralda. Com dureza de 7,3 na escala de Mohs, é extremamente resistente para uso em joias.</p>
+                
+                <p>Por sua raridade excepcional, seu valor supera inclusive o de diamantes de qualidade similar. As pedras brasileiras originárias de São José da Batalha são as mais cobiçadas e valiosas do mundo, devido aos teores anômalos de cobre que resultam em uma cor ainda mais viva e intensa.</p>
+                
+                <p>Atualmente, existem jazidas em Moçambique e Nigéria, que produzem turmalinas de excelente qualidade e com preços mais acessíveis, democratizando o acesso a esta gema extraordinária.</p>
+            </div>
+
+            <div class="quote">
+                "Compre com a Sertão Atlantic Gems: fácil de escolher, prático para comprar e seguro para receber."
+            </div>
+
+            <div class="description-text">
+                <p>Todos os nossos materiais são 100% naturais, adquiridos em estado bruto diretamente dos principais centros de produção do mundo. Prezamos pela qualidade absoluta, ética comercial, transparência total, rastreabilidade completa da cadeia produtiva e pela extração consciente e sustentável de todos os recursos naturais.</p>
+            </div>
+
+            <div class="origin-section">
+                <h3>Origens da Turmalina Paraíba</h3>
+                <img src="/mnt/kimi/upload/turmalinad.jpg" alt="Comparação de Turmalinas por origem" class="origin-image">
+                <p class="origin-text">Comparação de turmalinas Paraíba por origem: Brasil (esquerda), Moçambique (centro) e Nigéria (direita)</p>
+            </div>
+
+            <div class="purity-scale">
+                <h3>Quadro de Classificação de Pureza das Gemas de Cor (Brasil)</h3>
+                
+                <div class="purity-item">
+                    <span class="purity-code">SI</span>
+                    <div class="purity-desc">
+                        <strong>Sem inclusões</strong> e sem imperfeições externas, quando examinada a olho nú. Geralmente gemas com mais que 90% de limpeza dependendo da variedade. Atualmente são consideradas, dada a escassez, materiais de qualidade superior.
+                    </div>
+                </div>
+
+                <div class="purity-item">
+                    <span class="purity-code">IL</span>
+                    <div class="purity-desc">
+                        <strong>Inclusões leves</strong> ou muito pequenas, quando examinada a olho nú. Podendo ter pequenas imperfeições voltadas para as áreas externas. A categoria IL é descrita como muito próxima da categoria SI, porém com pequenas inclusões naturais, podendo ter pequenas áreas com menor transparência, mas sem depreciar as características de qualidade da gema.
+                    </div>
+                </div>
+
+                <div class="purity-item">
+                    <span class="purity-code">IM</span>
+                    <div class="purity-desc">
+                        <strong>Inclusões moderadas</strong> que podem ser vistas facilmente ao olho nú, mas com boa transparência. Podendo ter pequenas imperfeições ou inclusões próximas às áreas externas. Nesta categoria, as inclusões ou imperfeições não podem afetar a mesa da gema.
+                    </div>
+                </div>
+
+                <div class="purity-item">
+                    <span class="purity-code">IA</span>
+                    <div class="purity-desc">
+                        <strong>Inclusões internas acentuadas</strong>, facilmente vistas a olho nu. Imperfeições externas também são facilmente encontradas, comprometendo a transparência, porém com a melhor qualidade no corte para valorização do material.
+                    </div>
+                </div>
+
+                <div class="purity-item">
+                    <span class="purity-code">IE</span>
+                    <div class="purity-desc">
+                        <strong>Inclusões excessivas.</strong> Essa categoria envolve os materiais que apresentam muitas inclusões e imperfeições internas, afetando a qualidade e transparência final do material. As gemas desta categoria são quase sempre opacas ou com inclusões naturais acentuadas, para os mais apaixonados pela naturalidade de um material.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-section">
+        <h2 class="section-title">Quem comprou também pesquisou</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="card-image">
+                    <div class="card-badges">
+                        <span class="card-badge badge-new">Novidade</span>
+                        <span class="card-badge badge-stock">Na Área</span>
+                    </div>
+                    <img src="/mnt/kimi/upload/turmalinaa.jpg" alt="Brincos Turmalina Paraíba">
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Brincos Turmalina Paraíba Gota Par</div>
+                    <div class="card-price">R$ 28.450,00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-image">
+                    <div class="card-badges">
+                        <span class="card-badge badge-new">Exclusivo</span>
+                        <span class="card-badge badge-stock">Único</span>
+                    </div>
+                    <img src="/mnt/kimi/upload/turmalinab.jpg" alt="Anel Turmalina Verde">
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Anel Turmalina Paraíba Verde Oval</div>
+                    <div class="card-price">R$ 19.230,00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-image">
+                    <div class="card-badges">
+                        <span class="card-badge badge-new">Coleção</span>
+                        <span class="card-badge badge-stock">Limitado</span>
+                    </div>
+                    <img src="/mnt/kimi/upload/turmalinac.jpg" alt="Anel Pendente Turmalina">
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Anel Pendente Turmalina Paraíba</div>
+                    <div class="card-price">R$ 35.900,00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-image">
+                    <div class="card-badges">
+                        <span class="card-badge badge-new">Raro</span>
+                        <span class="card-badge badge-stock">Coleção</span>
+                    </div>
+                    <img src="/mnt/kimi/upload/turmalinaf.jpg" alt="Turmalina Paraíba Cushion">
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Turmalina Paraíba Azul Cushion</div>
+                    <div class="card-price">R$ 16.780,00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="/mnt/kimi/upload/sertao atlantic gems d.jpg" alt="Sertão Atlantic Gems" class="footer-logo">
+            <div class="footer-title">Sertão Atlantic Gems</div>
+            <div class="footer-subtitle">Turmalina Paraíba</div>
+            <div class="footer-divider"></div>
+            <div class="footer-text">
+                Especialistas em turmalinas Paraíba e pedras preciosas raras desde 2010.<br>
+                Qualidade certificada, ética comercial e transparência em cada gema.<br>
+                Rastreabilidade completa da cadeia produtiva - da mina à joia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;">
+        <span onclick="closeLightbox()" style="position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer;">&times;</span>
+        <img id="lightboxImage" src="" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+    </div>
+
+    <script>
+        function toggleInstallments() {
+            const list = document.getElementById('installmentList');
+            list.classList.toggle('show');
+        }
+
+        function changeImage(src, thumb) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+
+        function openLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const mainImage = document.getElementById('mainImage');
+            lightboxImage.src = mainImage.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar lightbox ao clicar fora da imagem
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Animação suave ao scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
